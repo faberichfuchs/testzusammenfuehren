@@ -1,0 +1,9 @@
+# ninja log v6
+28	7437	7682187339217475	CMakeFiles/GCGProject_GL.dir/src/Material.cpp.obj	366699d0fc147fe0
+5	7479	7682187338987456	CMakeFiles/GCGProject_GL.dir/src/Geometry.cpp.obj	1470f7eccfde185f
+18	8021	7682187339117405	CMakeFiles/GCGProject_GL.dir/src/Main.cpp.obj	bc54b8921223a07d
+8022	10210	7682187419154311	GCGProject_GL.exe	c47cde358657f4d1
+65	5757	7682193894279906	CMakeFiles/GCGProject_GL.dir/src/Material.cpp.obj	588afe5b6c958270
+41	6127	7682193894044664	CMakeFiles/GCGProject_GL.dir/src/Geometry.cpp.obj	bd779b63086d0ef3
+54	6511	7682193894169884	CMakeFiles/GCGProject_GL.dir/src/Main.cpp.obj	73cdcb81da0efb14
+6512	8731	7682193958752981	GCGProject_GL.exe	a047af54c83724ef
