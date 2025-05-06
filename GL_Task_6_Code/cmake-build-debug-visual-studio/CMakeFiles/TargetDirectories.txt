@@ -1,6 +1,0 @@
-C:/Users/fuchs/CLionProjects/testzusammenfuehren/GL_Task_6_Code/cmake-build-debug-visual-studio/CMakeFiles/GCGProject_GL.dir
-C:/Users/fuchs/CLionProjects/testzusammenfuehren/GL_Task_6_Code/cmake-build-debug-visual-studio/CMakeFiles/edit_cache.dir
-C:/Users/fuchs/CLionProjects/testzusammenfuehren/GL_Task_6_Code/cmake-build-debug-visual-studio/CMakeFiles/rebuild_cache.dir
-C:/Users/fuchs/CLionProjects/testzusammenfuehren/GL_Task_6_Code/cmake-build-debug-visual-studio/CMakeFiles/list_install_components.dir
-C:/Users/fuchs/CLionProjects/testzusammenfuehren/GL_Task_6_Code/cmake-build-debug-visual-studio/CMakeFiles/install.dir
-C:/Users/fuchs/CLionProjects/testzusammenfuehren/GL_Task_6_Code/cmake-build-debug-visual-studio/CMakeFiles/install/local.dir

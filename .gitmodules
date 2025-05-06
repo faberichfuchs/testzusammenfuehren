@@ -1,3 +1,3 @@
-[submodule "external/assimp"]
-	path = external/assimp
+[submodule "GL_Task_6_Code/external/assimp"]
+	path = GL_Task_6_Code/external/assimp
 	url = https://github.com/assimp/assimp.git

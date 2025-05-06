@@ -30,24 +30,36 @@ endif()
 
 find_package(OpenGL REQUIRED)
 
+# --- Assimp Setup START ---
+# Prevent building Assimp tools and tests
+set(ASSIMP_BUILD_ASSIMP_TOOLS OFF CACHE BOOL "" FORCE)
+set(ASSIMP_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(ASSIMP_NO_EXPORT ON CACHE BOOL "" FORCE)
+
+# Add Assimp as subdirectory (expected in external/assimp)
+add_subdirectory(external/assimp)
+# --- Assimp Setup END ---
+
 set(LINK_LIBRARIES
-    debug glfw3d optimized glfw3
-    debug glew32sd optimized glew32s
-    debug GCG_GL_Lib_Debug optimized GCG_GL_Lib_Release
-    OpenGL::GL
+        debug glfw3d optimized glfw3
+        debug glew32sd optimized glew32s
+        debug GCG_GL_Lib_Debug optimized GCG_GL_Lib_Release
+        OpenGL::GL
+        assimp  # <-- Added Assimp to link libraries
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE ${INCLUDE_DIRS})
 target_link_directories(${PROJECT_NAME} PRIVATE ${LIBRARY_DIR})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${LINK_LIBRARIES})
+
 # IDE specific settings
 if(CMAKE_GENERATOR MATCHES "Visual Studio")
-   set_target_properties(${PROJECT_NAME} PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
-   set_property(DIRECTORY "${CMAKE_SOURCE_DIR}" PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
+    set_target_properties(${PROJECT_NAME} PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
+    set_property(DIRECTORY "${CMAKE_SOURCE_DIR}" PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
 elseif(CMAKE_GENERATOR MATCHES "Xcode")
-   set_target_properties(${PROJECT_NAME} PROPERTIES XCODE_GENERATE_SCHEME TRUE CMAKE_XCODE_SCHEME_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
-   set_property(DIRECTORY "${CMAKE_SOURCE_DIR}" PROPERTY XCODE_STARTUP_PROJECT ${PROJECT_NAME})
+    set_target_properties(${PROJECT_NAME} PROPERTIES XCODE_GENERATE_SCHEME TRUE CMAKE_XCODE_SCHEME_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
+    set_property(DIRECTORY "${CMAKE_SOURCE_DIR}" PROPERTY XCODE_STARTUP_PROJECT ${PROJECT_NAME})
 endif()
 
 if(UNIX AND NOT APPLE)
@@ -57,10 +69,10 @@ if(UNIX AND NOT APPLE)
 endif()
 
 install(
-    TARGETS ${PROJECT_NAME} CONFIGURATIONS Debug DESTINATION "debug"
+        TARGETS ${PROJECT_NAME} CONFIGURATIONS Debug DESTINATION "debug"
 )
 install(
-    TARGETS ${PROJECT_NAME} CONFIGURATIONS Release DESTINATION "release"
+        TARGETS ${PROJECT_NAME} CONFIGURATIONS Release DESTINATION "release"
 )
 
 if(APPLE)

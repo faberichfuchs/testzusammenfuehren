@@ -12,6 +12,14 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Found OpenGL: opengl32
--- Configuring done (3.8s)
--- Generating done (0.0s)
--- Build files have been written to: C:/Users/fuchs/CLionProjects/testzusammenfuehren/GL_Task_6_Code/cmake-build-debug-visual-studio
+CMake Error at CMakeLists.txt:40 (add_subdirectory):
+  add_subdirectory not given a binary directory but the given source
+  directory
+  "C:/Users/fuchs/CLionProjects/testzusammenfuehren/external/assimp" is not a
+  subdirectory of
+  "C:/Users/fuchs/CLionProjects/testzusammenfuehren/GL_Task_6_Code".  When
+  specifying an out-of-tree source a binary directory must be explicitly
+  specified.
+
+
+-- Configuring incomplete, errors occurred!

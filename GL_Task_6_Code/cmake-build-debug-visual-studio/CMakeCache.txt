@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+ASSIMP_BUILD_ASSIMP_TOOLS:BOOL=OFF
+
+ASSIMP_BUILD_TESTS:BOOL=OFF
+
+ASSIMP_NO_EXPORT:BOOL=ON
+
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lib.exe
 
