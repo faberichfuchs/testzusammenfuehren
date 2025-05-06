@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.2.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\fuchs\CLionProjects\testzusammenfuehren\GL_Task_6_Code -B C:\Users\fuchs\CLionProjects\testzusammenfuehren\GL_Task_6_Code\cmake-build-debug-visual-studio
+"C:\Program Files\JetBrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.2.2/bin/ninja/win/x64/ninja.exe" -DCMAKE_TOOLCHAIN_FILE=C:/Users/fuchs/Documents/TU_Wien/SS2025/PTVC/packages/vcpkg/scripts/buildsystems/vcpkg.cmake -G Ninja -S C:\Users\fuchs\CLionProjects\testzusammenfuehren\GL_Task_6_Code -B C:\Users\fuchs\CLionProjects\testzusammenfuehren\GL_Task_6_Code\cmake-build-debug-visual-studio
 -- The C compiler identification is MSVC 19.43.34810.0
 -- The CXX compiler identification is MSVC 19.43.34810.0
 -- Detecting C compiler ABI info
@@ -12,14 +12,6 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Found OpenGL: opengl32
-CMake Error at CMakeLists.txt:40 (add_subdirectory):
-  add_subdirectory not given a binary directory but the given source
-  directory
-  "C:/Users/fuchs/CLionProjects/testzusammenfuehren/external/assimp" is not a
-  subdirectory of
-  "C:/Users/fuchs/CLionProjects/testzusammenfuehren/GL_Task_6_Code".  When
-  specifying an out-of-tree source a binary directory must be explicitly
-  specified.
-
-
--- Configuring incomplete, errors occurred!
+-- Configuring done (5.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/fuchs/CLionProjects/testzusammenfuehren/GL_Task_6_Code/cmake-build-debug-visual-studio

@@ -6,6 +6,8 @@ if(APPLE)
 endif()
 
 project(GCGProject_GL)
+# Tell CMake to use the vcpkg toolchain
+set(CMAKE_TOOLCHAIN_FILE "C:/Users/fuchs/Documents/TU_Wien/SS2025/PTVC/packages/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
 
 if(MSVC)
     # https://docs.microsoft.com/en-us/previous-versions/958x11bc(v=vs.140)
@@ -32,20 +34,22 @@ find_package(OpenGL REQUIRED)
 
 # --- Assimp Setup START ---
 # Prevent building Assimp tools and tests
-set(ASSIMP_BUILD_ASSIMP_TOOLS OFF CACHE BOOL "" FORCE)
-set(ASSIMP_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-set(ASSIMP_NO_EXPORT ON CACHE BOOL "" FORCE)
+#set(ASSIMP_BUILD_ASSIMP_TOOLS OFF CACHE BOOL "" FORCE)
+#set(ASSIMP_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+#set(ASSIMP_NO_EXPORT ON CACHE BOOL "" FORCE)
 
 # Add Assimp as subdirectory (expected in external/assimp)
-add_subdirectory(external/assimp)
+#add_subdirectory(external/assimp)
 # --- Assimp Setup END ---
+
+find_package(assimp CONFIG REQUIRED)
 
 set(LINK_LIBRARIES
         debug glfw3d optimized glfw3
         debug glew32sd optimized glew32s
         debug GCG_GL_Lib_Debug optimized GCG_GL_Lib_Release
         OpenGL::GL
-        assimp  # <-- Added Assimp to link libraries
+        assimp::assimp  # <-- Added Assimp to link libraries
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

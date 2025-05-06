@@ -13,6 +13,14 @@
 #include "Light.h"
 #include "Texture.h"
 
+// ASSIMP tests
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+#include <iostream>
+#include "ModelLoader.h"
+#include "Player.h"
+
 #undef min
 #undef max
 
@@ -185,6 +193,9 @@ int main(int argc, char** argv) {
     // Initialize scene and render loop
     /* --------------------------------------------- */
     {
+        // Modell laden
+        Player player("../assets/models/playermodel/scene.gltf");
+
         // Load shader(s)
         std::shared_ptr<Shader> cornellShader = std::make_shared<Shader>("assets/shaders/cornellGouraud.vert", "assets/shaders/cornellGouraud.frag");
         std::shared_ptr<Shader> textureShader = std::make_shared<Shader>("assets/shaders/texture.vert", "assets/shaders/texture.frag");
@@ -258,11 +269,16 @@ int main(int argc, char** argv) {
             setPerFrameUniforms(textureShader.get(), camera, dirL, pointL);
 
             // Render
+            /*
             cornellBox.draw();
             cube.draw();
             cylinder.draw();
             sphere.draw();
+            */
             cylinderBezier.draw();
+
+            // Modell rendern
+            player.draw(*textureShader);
 
             // Compute frame time
             dt = t;
